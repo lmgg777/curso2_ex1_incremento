@@ -1,29 +1,14 @@
 import React from "react";
+import Counter from "./Counter";
 
-class App extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = { currentNumber: 0 };
-  }
+const Component = () => {
+  return (
+    <div className="ui container" style={{ paddingTop: "10px" }}>
+      <Counter initialNumber={-10} />
+      <Counter initialNumber={7} />
+      <Counter initialNumber={1} />
+    </div>
+  );
+};
 
-  increment() {
-    this.setState(prevState => ({
-      currentNumber: prevState.currentNumber + 1
-    }));
-  }
-
-  render() {
-    return (
-      <div className="ui container" style={{paddingTop: "10px"}} >
-        <div className="ui segment" style={{display: "flex", justifyContent: "space-around", }}>
-          <button onClick={() => this.increment()} className="ui primary button" >Increment</button>
-          <div>
-            <span>{this.state.currentNumber}</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default App;
+export default Component;
