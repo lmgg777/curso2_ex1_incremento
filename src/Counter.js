@@ -12,6 +12,14 @@ class Counter extends React.Component {
     }));
   }
 
+  decrement() {
+    if (this.state.currentNumber > this.props.initialNumber) {
+      this.setState(prevState => ({
+        currentNumber: prevState.currentNumber - 1
+      }));
+    }
+  }
+
   render() {
     return (
       <div
@@ -20,6 +28,9 @@ class Counter extends React.Component {
       >
         <button onClick={() => this.increment()} className="ui primary button">
           Increment
+        </button>
+        <button onClick={() => this.decrement()} className="ui primary button">
+          Decrement
         </button>
         <div>
           <span>{this.state.currentNumber}</span>
