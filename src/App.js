@@ -1,7 +1,7 @@
 import React from "react";
 import Counter from "./Counter";
 
-const Component = () => {
+const App = () => {
   return (
     <div className="ui container" style={{ paddingTop: "10px" }}>
       <Counter initialNumber={-10} />
@@ -11,4 +11,4 @@ const Component = () => {
   );
 };
 
-export default Component;
+export default App;
